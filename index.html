@@ -20,7 +20,8 @@
                 }
                 .socials {
                     top: 50%;
-                    margin-top: -118px;
+                    margin-top: -116px;
+                    right: 0;
                 }
                 @keyframes gradient {
                     0% {
@@ -54,15 +55,16 @@
                     <li class="list-group-item bg-transparent border-0">CONTACT</li>
                 </ul>
             </div>
-            <ul class="list-group d-inline-flex fixed-top bg-dark w-auto text-white overflow-hidden">
-                 <li class="list-group-item bg-transparent border-0">HOME</li> 
-                 <li class="list-group-item bg-transparent border-0">ABOUT</li> 
-                 <li class="list-group-item bg-transparent border-0">GALLERY</li> 
-                 <li class="list-group-item bg-transparent border-0">CONTACT</li>
+            <ul class="list-group d-inline-flex position-absolute socials bg-transparent w-auto text-white overflow-hidden">
+                 <li class="list-group-item bg-transparent border-0"><i class="fab fa-2x fa-instagram"></i></li> 
+                 <li class="list-group-item bg-transparent border-0"><i class="fab fa-2x fa-twitter-square"></i></li> 
+                 <li class="list-group-item bg-transparent border-0"><i class="fab fa-2x fa-snapchat-square"></i></li> 
+                 <li class="list-group-item bg-transparent border-0"><i class="fas fa-2x fa-envelope-square"></i></li>
             </ul>
         </div>
         <!--<script src="assets/js/lodash.min.js"></script>-->
         <script src="assets/js/vue.js"></script>
+        <script src="assets/js/lodash.min.js"></script>
         <script type="text/javascript">
             const wrapper = new Vue({
                 el: '#main-wrapper',
