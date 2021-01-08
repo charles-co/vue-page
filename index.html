@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <title>Rad</title>
+            <meta name="keywords" content="" />
+            <meta name="description" content="" />
+            <link rel="stylesheet" href="assets/css/bootstrap.min.css"> 
+            <link rel="stylesheet" href="assets/css/all.min.css">
+            <style>
+                .wrapper{
+                    background: linear-gradient(to right, #d60043 0%, #d60043 50%, #e40656 50%, #e40656 100%);
+                    background: -webkit-linear-gradient(to right, #d60043 0%, #d60043 50%, #e40656 50%, #e40656 100%);
+                }
+                .content {
+                    background-color:  #e40656;
+                    height: 70%;
+                }
+                .socials {
+                    top: 50%;
+                    margin-top: -118px;
+                }
+                @keyframes gradient {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    50% {
+                        background-position: 100% 50%;
+                    }
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
+                .letter-space{
+                    letter-spacing: 10px;
+                }
+            </style>
+    </head>
+    <body>
+        <div id="main-wrapper" class="container-fluid vh-100 wrapper justify-content-center align-items-center">
+            <div class="row d-flex justify-content-center align-content-around h-100">
+                <p class="display-4 mb-0 letter-space text-center text-white font-weight-lighter">AQUILA AVEION</p>
+                <div class="col-8 content shadow">
+                    <div class="d-flex align-items-end h-100">
+                        <img src="assets/image/image.png" class="img-fluid"/>
+                    </div>
+                </div>
+                <ul class="list-group col-md-9 col-12 list-group-horizontal text-white justify-content-around justify-content-md-between text-monospace overflow-hidden">
+                    <li class="list-group-item bg-transparent border-0">HOME</li> 
+                    <li class="list-group-item bg-transparent border-0">ABOUT</li> 
+                    <li class="list-group-item bg-transparent border-0">GALLERY</li> 
+                    <li class="list-group-item bg-transparent border-0">CONTACT</li>
+                </ul>
+            </div>
+            <ul class="list-group d-inline-flex fixed-top bg-dark w-auto text-white overflow-hidden">
+                 <li class="list-group-item bg-transparent border-0">HOME</li> 
+                 <li class="list-group-item bg-transparent border-0">ABOUT</li> 
+                 <li class="list-group-item bg-transparent border-0">GALLERY</li> 
+                 <li class="list-group-item bg-transparent border-0">CONTACT</li>
+            </ul>
+        </div>
+        <!--<script src="assets/js/lodash.min.js"></script>-->
+        <script src="assets/js/vue.js"></script>
+        <script type="text/javascript">
+            const wrapper = new Vue({
+                el: '#main-wrapper',
+                delimiters: ['[[', ']]'],
+                data() {
+                    return {
+                    }
+                },
+                filters: {
+                },
+                computed: {
+                },
+                mounted(){
+                },
+                methods: {
+                },
+            });
+        </script>
+    </body>
+</html>
