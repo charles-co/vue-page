@@ -4,15 +4,21 @@
         <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <title>Rad</title>
+            <title>Vue Frontend</title>
             <meta name="keywords" content="" />
             <meta name="description" content="" />
-            <link rel="stylesheet" href="assets/css/bootstrap.min.css"> 
+            <link rel="stylesheet" href="assets/css/animate.min.css">
+            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
             <link rel="stylesheet" href="assets/css/all.min.css">
             <style>
                 .wrapper{
-                    background: linear-gradient(to right, #d60043 0%, #d60043 50%, #e40656 50%, #e40656 100%);
-                    background: -webkit-linear-gradient(to right, #d60043 0%, #d60043 50%, #e40656 50%, #e40656 100%);
+                    background: linear-gradient(to top right, #d60043 0%, #d60043 50%, #e40656 50%, #e40656 100%);
+                    background: -webkit-linear-gradient(to top right, #d60043 0%, #d60043 50%, #e40656 50%, #e40656 100%);
+                    background: -o-linear-gradient(to top right, #d60043 0%, #d60043 50%, #e40656 50%, #e40656 100%);
+                    background: -moz-linear-gradient(to top right, #d60043 0%, #d60043 50%, #e40656 50%, #e40656 100%);;
+                    //background: -moz-linear-gradient(to top left, #33ccff 0%, #ff99cc 100%);
+                    background-size: 300% 300%;
+                    animation: gradient 10s ease-out infinite;
                 }
                 .content {
                     background-color:  #e40656;
@@ -37,42 +43,61 @@
                 .letter-space{
                     letter-spacing: 10px;
                 }
+                .fa-2x{
+                    transition: all .3s ease;
+                }
+                .socials li:hover .fa-2x{
+                    font-size: 2.3rem;
+                }
+                @media (min-width: 443px) and (max-width: 640px){
+                    .display-4 {
+                        font-size: 2rem;
+                    }
+                }
+                @media (max-width: 442px){
+                    .display-4 {
+                        font-size: 1.5rem;
+                    }
+                }
             </style>
     </head>
     <body>
-        <div id="main-wrapper" class="container-fluid vh-100 wrapper justify-content-center align-items-center">
-            <div class="row d-flex justify-content-center align-content-around h-100">
-                <p class="display-4 mb-0 letter-space text-center text-white font-weight-lighter">AQUILA AVEION</p>
-                <div class="col-8 content shadow">
-                    <div class="d-flex align-items-end h-100">
-                        <img src="assets/image/image.png" class="img-fluid"/>
+        <div id="mainwrapper" class="container-fluid vh-100 wrapper justify-content-center align-items-center">
+            <div class="row no-gutters justify-content-center align-content-around h-100 overflow-hidden">
+                <p class="display-4 animate__animated animate__fadeInDown animate__slow animate__delay-1s col-12 mb-0 letter-space text-center text-white font-weight-lighter">[[ name ]]</p>
+                <div class="col-10 col-md-8 content animate__animated animate__flip animate_slower p-0 shadow">
+                    <div class="d-flex align-items-end justify-content-center h-100">
+                        <img src="assets/image/image.png" width="600" height="400" class="img-fluid img-responsive"/>
                     </div>
                 </div>
-                <ul class="list-group col-md-9 col-12 list-group-horizontal text-white justify-content-around justify-content-md-between text-monospace overflow-hidden">
-                    <li class="list-group-item bg-transparent border-0">HOME</li> 
-                    <li class="list-group-item bg-transparent border-0">ABOUT</li> 
-                    <li class="list-group-item bg-transparent border-0">GALLERY</li> 
-                    <li class="list-group-item bg-transparent border-0">CONTACT</li>
+                <ul class="list-group animate__animated animate__fadeInUp animate__slow animate__delay-1s col-md-9 col-12 list-group-horizontal text-white justify-content-between text-monospace overflow-hidden">
+                    <li class="list-group-item px-0 px-md-auto d-flex align-items-center bg-transparent border-0">HOME</li> 
+                    <li class="list-group-item px-0 px-md-auto d-flex align-items-center bg-transparent border-0">ABOUT</li>
+                    <li class="list-group-item px-0 px-md-auto d-flex align-items-center bg-transparent border-0">
+                        <img src="assets/image/image2.jpg" width="60" height="60" class="img-fluid rounded-circle"/>
+                    </li>
+                    <li class="list-group-item px-0 px-md-auto d-flex align-items-center bg-transparent border-0">GALLERY</li> 
+                    <li class="list-group-item px-0 px-md-auto d-flex align-items-center bg-transparent border-0">CONTACT</li>
                 </ul>
             </div>
-            <ul class="list-group d-inline-flex position-absolute socials bg-transparent w-auto text-white overflow-hidden">
-                 <li class="list-group-item bg-transparent border-0"><a href="#"><i class="fab fa-2x fa-instagram"></i></a></li> 
-                 <li class="list-group-item bg-transparent border-0"><a href="#"><i class="fab fa-2x fa-twitter-square"></i></a></li> 
-                 <li class="list-group-item bg-transparent border-0"><a href="#"><i class="fab fa-2x fa-snapchat-square"></i></a></li> 
-                 <li class="list-group-item bg-transparent border-0"><a href="#"><i class="fas fa-2x fa-envelope-square"></i></a></li>
-            </ul>
+            <transition-group appear tag="ul" v-on:before-enter="beforeEnter" v-on:enter="enter" class="list-group d-inline-flex position-fixed socials bg-transparent w-auto text-white overflow-hidden">
+                <li class="list-group-item bg-transparent pr-2 d-flex justify-content-end border-0" v-for="social, key, index in socials" :data-index="index" :key="social">
+                    <a :href="get_link(key, social)" class="text-decoration-none text-white">
+                        <i :class="get_logo(key)"></i>
+                    </a>
+                </li> 
+            </transition-group>
         </div>
-        <!--<script src="assets/js/lodash.min.js"></script>-->
         <script src="assets/js/vue.js"></script>
         <script src="assets/js/lodash.min.js"></script>
         <script type="text/javascript">
-            const wrapper = new Vue({
-                el: '#main-wrapper',
+            const mainwrapper = new Vue({
+                el: '#mainwrapper',
                 delimiters: ['[[', ']]'],
                 data() {
                     return {
                         socials: {},
-                        name: {},
+                        name: "",
                     }
                 },
                 filters: {
@@ -83,27 +108,64 @@
                     this.getcontent();
                 },
                 methods: {
-                    getcontent(){
+                    getcontent(){         
                         fetch("https://hirng-x2021.glitch.me/api", {
-                        method: 'GET',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'X-CSRFToken': '{{ csrf_token }}'
-                        }, 
-                        credentials: 'same-origin',
-                    })
-                    .then((response) => { 
-                        return response.json();
-                    })
-                    .then((results) => {
-                        this.name = _.map(results, 'social_media');
-                        console.log(results)
-                        console.log(this.name)
-                    })
-                    .catch(function (error){
-                        console.log(error);
-                    })
-                }
+                            method: 'GET',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': '{{ csrf_token }}'
+                            }, 
+                            credentials: 'same-origin',
+                        })
+                        .then((response) => { 
+                            return response.json();
+                        })
+                        .then((results) => {
+                            this.name = results.name          
+                            this.socials = results.social_media 
+                        })
+                        .catch(function (error){
+                            console.log(error);
+                        })
+                    },
+                    get_logo(logo){
+                        if (logo === "twitter"){
+                            return "fab fa-2x fa-twitter-square"
+                        }
+                        if (logo === "instagram"){
+                            return "fab fa-2x fa-instagram"
+                        }
+                        if (logo === "email"){
+                            return "fas fa-2x fa-envelope-square"
+                        }
+                        if (logo === "snapchat"){
+                            return "fab fa-2x fa-snapchat-square"
+                        }
+                    },
+                    get_link(platform, username){
+                        if (platform === "twitter"){
+                            return "https://www.twitter.com/" + username
+                        }
+                        if (platform === "instagram"){
+                            return "www.instagram.com/" + username
+                        }
+                        if (platform === "email"){
+                            return "malito:" + username
+                        }
+                        if (platform === "snapchat"){
+                            return "www.snapchat.com/" + username
+                        }
+                    },
+                    beforeEnter: function (el) {
+                        el.style.opacity = 0
+                    },
+                    enter: function(el, done){
+                        var delay = el.dataset.index * 150 + 1000
+                        setTimeout(function(){
+                            el.style.opacity = 1
+                            el.classList.add("animate__animated", "animate__fadeInRight")    
+                        }, delay)
+                    },
                 },
             });
         </script>
