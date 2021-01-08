@@ -72,7 +72,7 @@
                 data() {
                     return {
                         socials: {},
-                        name: "",
+                        name: {},
                     }
                 },
                 filters: {
@@ -96,7 +96,8 @@
                         return response.json();
                     })
                     .then((results) => {
-                        this.name = _.map(results, "name");
+                        this.name = _.map(results, 'social_media');
+                        console.log(results)
                         console.log(this.name)
                     })
                     .catch(function (error){
