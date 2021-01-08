@@ -7,9 +7,9 @@
             <title>Vue Frontend</title>
             <meta name="keywords" content="" />
             <meta name="description" content="" />
-            <link rel="stylesheet" href="assets/css/animate.min.css">
-            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-            <link rel="stylesheet" href="assets/css/all.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" />            
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
             <style>
                 .wrapper{
                     background: linear-gradient(to top right, #d60043 0%, #d60043 50%, #e40656 50%, #e40656 100%);
@@ -22,7 +22,6 @@
                 }
                 .content {
                     background-color:  #e40656;
-                    height: 70%;
                 }
                 .socials {
                     top: 50%;
@@ -88,8 +87,8 @@
                 </li> 
             </transition-group>
         </div>
-        <script src="assets/js/vue.js"></script>
-        <script src="assets/js/lodash.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
         <script type="text/javascript">
             const mainwrapper = new Vue({
                 el: '#mainwrapper',
@@ -147,13 +146,13 @@
                             return "https://www.twitter.com/" + username
                         }
                         if (platform === "instagram"){
-                            return "www.instagram.com/" + username
+                            return "https://www.instagram.com/" + username
                         }
                         if (platform === "email"){
-                            return "malito:" + username
+                            return "mailto:" + username
                         }
                         if (platform === "snapchat"){
-                            return "www.snapchat.com/" + username
+                            return "https://www.snapchat.com/" + username
                         }
                     },
                     beforeEnter: function (el) {
