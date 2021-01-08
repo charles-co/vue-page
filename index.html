@@ -71,6 +71,8 @@
                 delimiters: ['[[', ']]'],
                 data() {
                     return {
+                        socials: {},
+                        name: "",
                     }
                 },
                 filters: {
@@ -94,7 +96,8 @@
                         return response.json();
                     })
                     .then((results) => {
-                        console.log(results)
+                        this.name = _.map(results, "name");
+                        console.log(this.name)
                     })
                     .catch(function (error){
                         console.log(error);
